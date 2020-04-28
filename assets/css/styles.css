@@ -2,3 +2,4 @@
 @import url('./base/_reset.css');
 @import url('./base/_typography.css');
 @import url('./components/_buttons.css');
+@import url('./layout/_main.css');
