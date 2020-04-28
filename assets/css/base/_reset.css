@@ -1,4 +1,14 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Merriweather';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 body{
-    background-color: red;
     margin: 0;
+    background-image: url('../../images/bg-blue.jpg');
+    background-repeat: repeat;
 }
