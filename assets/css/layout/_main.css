@@ -75,6 +75,7 @@ section {
 #production::-webkit-scrollbar { 
     width: 15px; 
     border: 2px solid blue; 
+    height: 80%;
 } 
   
 #production::-webkit-scrollbar-button:single-button { 
@@ -95,4 +96,25 @@ section {
 #store {
     min-width: 300px;
     max-width: 300px;
+    overflow-y: scroll;
 }
+
+#store::-webkit-scrollbar { 
+    width: 15px; 
+    border: 2px solid blue; 
+    height: 80%;
+} 
+  
+#store::-webkit-scrollbar-button:single-button { 
+    background-color: red; 
+    height: 16px; 
+    width: 16px; 
+} 
+  
+  #store::-webkit-scrollbar-thumb { 
+    background: black; 
+} 
+  
+#store::-webkit-scrollbar-track { 
+    background: white; 
+} 
