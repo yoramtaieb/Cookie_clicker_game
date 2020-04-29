@@ -118,7 +118,7 @@ section {
     width: 16px; 
 } 
   
-  #store::-webkit-scrollbar-thumb { 
+#store::-webkit-scrollbar-thumb { 
     background: black; 
 } 
   
