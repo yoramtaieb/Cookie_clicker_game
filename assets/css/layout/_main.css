@@ -102,6 +102,10 @@ section {
     background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 1) 86%);
 }
 
+#store h2{
+    text-shadow: 0px 0px 4px #000000;
+}
+
 #store::-webkit-scrollbar { 
     width: 15px; 
     border: 2px solid blue; 
@@ -124,7 +128,16 @@ section {
 
 #buildings{
     background-image: url('../../images/panel-horizontal.png');
+    background-repeat: no-repeat;
     width: 100%;
     min-height: 16px;
     margin-top: 15px;
+    font-size:11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0px 1px 4px #000000;
+}
+
+#buildings:hover::before{
+    content: 'building';
 }
