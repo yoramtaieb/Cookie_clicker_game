@@ -5,8 +5,10 @@
     cursor: pointer;
     width: 100%;
     /* height: 100px; */
-    padding: 0.8em;
+    padding: 0.7em;
     transition-duration: 0.2s;
+    display: flex;
+    justify-content: flex-start;
 }
 
 #building-cursor:hover, #building-grandma:hover{
@@ -16,6 +18,7 @@
 .name{
     font-size: 20.8px;
     text-shadow: 0px 0px 4px #000000;
+    background-color: red;
 }
 
 .cost{
@@ -24,6 +27,7 @@
     font-size: 11.2px;
     color: #66ff66;
     text-shadow: 0px 1px 4px #000000;
+    background-color: green;
 }
 
 .name, .cost{
@@ -31,12 +35,13 @@
 }
 
 .icon{
-    background-image: url('../../images/buildings.png');
-    background-repeat: no-repeat;
-    background-repeat: no-repeat;
-    background-position-y: -10px;
-    height: 100%;
-    width: 20%;
+    position: relative;
+    background: url('../../images/buildings.png') 5px 0px;
+    height: 150%;
+    width: 25%;
+    /* background-color: yellow; */
+    left: -20px;
+    bottom: 10px;
 }
 
 .locked{

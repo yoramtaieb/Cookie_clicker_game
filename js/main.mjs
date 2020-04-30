@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     containerStore.appendChild(div)
     let divIcon = document.createElement('div')
     divIcon.setAttribute('class', 'icon')
+    let boxNameAndCost = document.createElement('div')
     let divName = document.createElement('div')
     divName.setAttribute('class', 'name')
     divName.innerHTML = buildings[i].name
@@ -35,8 +36,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let divNumber = document.createElement('div')
     divNumber.setAttribute('class', 'number')
     div.appendChild(divIcon)
-    div.appendChild(divName)
-    div.appendChild(divCost)
+    boxNameAndCost.appendChild(divName)
+    boxNameAndCost.appendChild(divCost)
+    div.appendChild(boxNameAndCost)
     div.appendChild(divNumber)
    }
 });
