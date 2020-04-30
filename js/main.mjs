@@ -7,7 +7,7 @@ import { buildings } from "./data/Data.mjs"
 const cookiesStock = document.querySelector('#cookiesStock span')
 const cookiePerSecond = document.querySelector('#cookiesPerSecond span')
 const bakeryName = document.querySelector('#bakery h2')
-const containerBuildings = document.getElementById('buildings')
+const containerStore = document.getElementById('store')
 
 // Instanciations des classes
 const myBakery = new Bakery()
@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
    cookiePerSecond.innerHTML = myBakery._cookiesPerSecond
    for(let i = 0; i < buildings.length - 3; i++){
     let div = document.createElement('div')
-    div.setAttribute('id', `building-${buildings[i].name}`)
-    containerBuildings.appendChild(div)
+    div.setAttribute('id', `building-${buildings[i].name}`.toLowerCase())
+    containerStore.appendChild(div)
     let divIcon = document.createElement('div')
     divIcon.setAttribute('class', 'icon')
     let divName = document.createElement('div')
