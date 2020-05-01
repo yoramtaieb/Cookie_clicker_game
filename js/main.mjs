@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let boxNameAndCost = document.createElement('div')
     let divName = document.createElement('div')
     divName.setAttribute('class', 'name')
-    divName.innerHTML = buildings[i].name
+    divName.innerHTML = '? ? ?'
     let divCost = document.createElement('div')
     divCost.setAttribute('class', 'cost')
     divCost.innerHTML = buildings[i].cost
