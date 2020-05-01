@@ -1,21 +1,22 @@
-#buildings{
+#buildings {
     background-image: url('../../images/panel-horizontal.png');
     background-repeat: no-repeat;
     width: 100%;
     min-height: 16px;
     margin-top: 15px;
-    font-size:11px;
+    font-size: 11px;
     text-transform: uppercase;
     font-weight: bold;
     text-shadow: 0px 1px 4px #000000;
     /* background: red; */
 }
 
-#buildings:hover::before{
+#buildings:hover::before {
     content: 'building';
 }
 
-#building-cursor, #building-grandma{
+#building-cursor,
+#building-grandma {
     background-image: url('../../images/store-tile.jpg');
     background-repeat: no-repeat;
     /* background-position: center; */
@@ -29,17 +30,18 @@
     justify-content: flex-start;
 }
 
-#building-cursor:hover, #building-grandma:hover{
+#building-cursor:hover,
+#building-grandma:hover {
     box-shadow: inset 0px 0px 15px 3px #ffffff;
 }
 
-.name{
+.name {
     font-size: 20.8px;
     text-shadow: 0px 0px 4px #000000;
     /* background-color: red; */
 }
 
-.cost{
+.cost {
     background-image: url('../../images/');
     background-repeat: no-repeat;
     font-size: 11.2px;
@@ -48,31 +50,28 @@
     /* background-color: green; */
 }
 
-.name, .cost{
+.name,
+.cost {
     font-weight: bold;
 }
 
-.icon{
+.icon {
     position: relative;
     height: 60px;
     width: 25%;
-    /* background-color: yellow; */
     left: -10px;
     bottom: 0px;
     background: url('../../images/buildings.png');
-    background-position-x: 5px;
-    background-position-y: 0px;
-    
 }
 
-.locked{
+.locked {
     /* Pour plus tard */
 }
 
-#buildings .disabled::after{
+#buildings .disabled::after {
     content: '';
     background-color: black;
-    opacity : 0.5;
+    opacity: 0.5;
     position: absolute;
     height: 8vh;
     width: 19.8vw;
