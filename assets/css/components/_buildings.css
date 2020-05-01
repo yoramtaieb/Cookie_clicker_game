@@ -15,6 +15,9 @@
     content: 'building';
 }
 
+
+/* [id^='building-'] /* A revoir pour après "séléctionne grandma et cursor */
+
 #building-cursor,
 #building-grandma {
     background-image: url('../../images/store-tile.jpg');
@@ -42,11 +45,14 @@
 }
 
 .cost {
-    background-image: url('../../images/');
+    background-image: url('../../images/money.png');
     background-repeat: no-repeat;
     font-size: 11.2px;
     color: #66ff66;
     text-shadow: 0px 1px 4px #000000;
+    width: 3.8vw;
+    height: 16px;
+    text-align: center;
     /* background-color: green; */
 }
 
