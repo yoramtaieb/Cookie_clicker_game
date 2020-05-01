@@ -17,30 +17,34 @@ console.log(buildings)
 
 // Quand la page est chargée
 document.addEventListener("DOMContentLoaded", function() {
-   bakeryName.innerHTML = myBakery._name
-   cookiesStock.innerHTML = myBakery._cookies
-   cookiePerSecond.innerHTML = myBakery._cookiesPerSecond
-   for(let i = 0; i < buildings.length - 3; i++){
-    let div = document.createElement('div')
-    div.setAttribute('id', `building-${buildings[i].name}`.toLowerCase())
-    containerStore.appendChild(div)
-    let divIcon = document.createElement('div')
-    divIcon.setAttribute('class', 'icon')
-    let boxNameAndCost = document.createElement('div')
-    let divName = document.createElement('div')
-    divName.setAttribute('class', 'name')
-    divName.innerHTML = '? ? ?'
-    let divCost = document.createElement('div')
-    divCost.setAttribute('class', 'cost')
-    divCost.innerHTML = buildings[i].cost
-    let divNumber = document.createElement('div')
-    divNumber.setAttribute('class', 'number')
-    div.appendChild(divIcon)
-    boxNameAndCost.appendChild(divName)
-    boxNameAndCost.appendChild(divCost)
-    div.appendChild(boxNameAndCost)
-    div.appendChild(divNumber)
-   }
+    // Ajout du nom de la boulangerie
+    bakeryName.innerHTML = myBakery._name
+        //  Ajout du nombre de cookies
+    cookiesStock.innerHTML = myBakery._cookies
+        //  Ajout du nombre de cookies par secondes
+    cookiePerSecond.innerHTML = myBakery._cookiesPerSecond
+        //  Boucle for pour permettre de récupérer le cost et le name dans DATA_MJS 
+    for (let i = 0; i < buildings.length - 3; i++) {
+        let div = document.createElement('div')
+        div.setAttribute('id', `building-${buildings[i].name}`.toLowerCase())
+        containerStore.appendChild(div)
+        let divIcon = document.createElement('div')
+        divIcon.setAttribute('class', 'icon')
+        let boxNameAndCost = document.createElement('div')
+        let divName = document.createElement('div')
+        divName.setAttribute('class', 'name')
+        divName.innerHTML = buildings[i].name
+        let divCost = document.createElement('div')
+        divCost.setAttribute('class', 'cost')
+        divCost.innerHTML = buildings[i].cost
+        let divNumber = document.createElement('div')
+        divNumber.setAttribute('class', 'number')
+        div.appendChild(divIcon)
+        boxNameAndCost.appendChild(divName)
+        boxNameAndCost.appendChild(divCost)
+        div.appendChild(boxNameAndCost)
+        div.appendChild(divNumber)
+    }
 });
 
 
