@@ -9,7 +9,6 @@ const cookiePerSecond = document.querySelector('#cookiesPerSecond span')
 const bakeryName = document.querySelector('#bakery h2')
 const containerBuildings = document.querySelector('#buildings')
 const buildingCursor = document.getElementById('building-cursor')
-console.log(buildingCursor)
 
 const myBakery = new Bakery()
 const building = new Building()
@@ -57,16 +56,15 @@ for (let i = 0; i < 2; i++) {
 export default CreateBuildings
 
 function compare(){
-    if(myBakery._cookies > 0){
-        console.log("Hey c'est plus de 2")
+    let price = document.getElementsByClassName('cost')
+    if(myBakery._cookies >= parseInt(price[0].innerHTML)){
         document.getElementById('building-cursor').classList.remove('disabled')
         // div.classList.remove('locked')
-        let test = document.getElementsByClassName('name')
-        test[0].innerHTML = buildings[0].name
-    } if(myBakery._cookies > 0){
-        console.log('bite')
+        let divName = document.getElementsByClassName('name')
+        divName[0].innerHTML = buildings[0].name
+    } if(myBakery._cookies >= parseInt(price[1].innerHTML)){
         document.getElementById('building-grandma').classList.remove('disabled')
-        let test = document.getElementsByClassName('name')
-        test[1].innerHTML = buildings[1].name
+        let divName = document.getElementsByClassName('name')
+        divName[1].innerHTML = buildings[1].name
     }
 }
