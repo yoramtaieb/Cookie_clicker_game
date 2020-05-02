@@ -4,6 +4,7 @@
     width: 100%;
     min-height: 16px;
     margin-top: 15px;
+    padding-top: 15px;
     font-size: 11px;
     text-transform: uppercase;
     font-weight: bold;
@@ -11,8 +12,17 @@
     /* background: red; */
 }
 
+#buildings::before {
+    padding: 1px 2px;
+    position: absolute;
+    content: 'Buildings';
+    margin-top: -16px;
+    opacity: 0;
+}
+
 #buildings:hover::before {
-    content: 'building';
+    opacity: 1;
+    transition: 0.75s;
 }
 
 
