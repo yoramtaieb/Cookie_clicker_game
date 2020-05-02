@@ -6,5 +6,6 @@ class Bakery{
         this._cookiesPerSecond = 0
         this._buildings = []
     }
+
 }
 export default Bakery

@@ -25,11 +25,7 @@
     transition: 0.75s;
 }
 
-
-/* [id^='building-'] /* A revoir pour après "séléctionne grandma et cursor */
-
-#building-cursor,
-#building-grandma {
+[id^='building-']{
     background-image: url('../../images/store-tile.jpg');
     background-repeat: no-repeat;
     /* background-position: center; */
@@ -43,8 +39,7 @@
     justify-content: flex-start;
 }
 
-#building-cursor:hover,
-#building-grandma:hover {
+[id^='building-']:hover{
     box-shadow: inset 0px 0px 15px 3px #ffffff;
 }
 
@@ -58,8 +53,8 @@
     background-image: url('../../images/money.png');
     background-repeat: no-repeat;
     font-size: 11.2px;
-    color: #66ff66;
     text-shadow: 0px 1px 4px #000000;
+    /* color: #66ff66; */
     width: 3.8vw;
     height: 16px;
     text-align: center;
@@ -80,15 +75,22 @@
     background: url('../../images/buildings.png');
 }
 
-.locked {
+.locked{
     /* Pour plus tard */
+    content: '';
+    color: #ff6666;
 }
 
-#buildings .disabled::after {
+.disabled .cost{
+    color: #ff6666
+}
+
+.disabled::after{
     content: '';
     background-color: black;
     opacity: 0.5;
     position: absolute;
     height: 8vh;
     width: 19.8vw;
+    color: #ff6666;
 }
