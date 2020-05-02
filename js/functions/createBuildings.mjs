@@ -8,7 +8,8 @@ const cookiesStock = document.querySelector('#cookiesStock span')
 const cookiePerSecond = document.querySelector('#cookiesPerSecond span')
 const bakeryName = document.querySelector('#bakery h2')
 const containerBuildings = document.querySelector('#buildings')
-const divIcons = document.getElementsByClassName('icon')
+const buildingCursor = document.getElementById('building-cursor')
+console.log(buildingCursor)
 
 const myBakery = new Bakery()
 const building = new Building()
@@ -22,13 +23,12 @@ cookiesStock.innerHTML = myBakery._cookies
 cookiePerSecond.innerHTML = myBakery._cookiesPerSecond
 
 function CreateBuildings(){
-    console.log(buildings)
     //  Boucle for permettant de récupérer le cost et le name dans DATA_MJS en mettant -3 car il y 5 éléments
 for (let i = 0; i < 2; i++) {
     // Création d'une div avec un id "building" + ajout du name et du cost dans ma div "building"
     let div = document.createElement('div')
     div.setAttribute('id', `building-${buildings[i].name}`.toLowerCase())
-        // Ajout de mes class "locked" et "disabled" à ma div building grâce à appendChild
+        // Ajout de mes e class "locked" et "disabled" à ma div building grâce à appendChild
     div.className = "locked disabled"
     containerBuildings.appendChild(div)
         // Création de ma div avec la class icon
@@ -48,10 +48,25 @@ for (let i = 0; i < 2; i++) {
     boxNameAndCost.appendChild(divName)
     boxNameAndCost.appendChild(divCost)
     div.appendChild(boxNameAndCost)
-    div.appendChild(divNumber)  
-    const bite = div.getAttribute('id', `building-${buildings[i].name}`)
-    console.log(bite)  
+    div.appendChild(divNumber) 
    }
+   compare()
+
 }
 
 export default CreateBuildings
+
+function compare(){
+    if(myBakery._cookies > 0){
+        console.log("Hey c'est plus de 2")
+        document.getElementById('building-cursor').classList.remove('disabled')
+        // div.classList.remove('locked')
+        let test = document.getElementsByClassName('name')
+        test[0].innerHTML = buildings[0].name
+    } if(myBakery._cookies > 0){
+        console.log('bite')
+        document.getElementById('building-grandma').classList.remove('disabled')
+        let test = document.getElementsByClassName('name')
+        test[1].innerHTML = buildings[1].name
+    }
+}

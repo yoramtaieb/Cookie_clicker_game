@@ -75,10 +75,20 @@
     background: url('../../images/buildings.png');
 }
 
-.locked{
+#building-cursor .icon{
+    background-position-y: -0px;
+    background-position-x: 10px;
+} 
+
+#building-grandma .icon{
+    background-position-y: -60px;
+    background-position-x: 10px;
+} 
+
+.locked .icon{
     /* Pour plus tard */
-    content: '';
-    color: #ff6666;
+    background-position-y: -67px;
+    background-position-x: -54px;
 }
 
 .disabled .cost{
