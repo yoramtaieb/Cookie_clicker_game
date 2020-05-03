@@ -1,5 +1,6 @@
-@import url('./base/_fonts.css');
-@import url('./base/_reset.css');
-@import url('./base/_typography.css');
-@import url('./components/_buildings.css');
-@import url('./layout/_main.css');
+@import "./base/_reset.css";
+@import "./base/_fonts.css";
+@import "./layout/_main.css";
+@import "./layout/_bakery.css";
+@import "./layout/_production.css";
+@import "./layout/_store.css";

@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cookie Clicker</title>
-    <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="icon" href="./assets/favicons/favicon.ico" />
-</head>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
 
-<body>
+  <body>
     <main id="game">
-        <section id="bakery">
-            <h2>Bakery</h2>
-            <div id="cookies">
-                <div id="cookiesStock"><span>?</span> cookies</div>
-                <div id="cookiesPerSecond">cookies per second: <span>?</span></div>
-            </div>
-            <div id="bigCookie"></div>
-        </section>
+      <section id="bakery">
+        <h2>Bakery</h2>
+        <div id="cookies">
+          <div id="cookiesStock"><span>?</span> cookies</div>
+          <div id="cookiesPerSecond">cookies per second: <span>?</span></div>
+        </div>
+        <div id="bigCookie"></div>
+      </section>
 
-        <div class="separator"></div>
+      <div class="separator"></div>
 
-        <section id="production">
-            <h2>Production lines</h2>
-            <hr />
-        </section>
+      <section id="production">
+        <h2>Production lines</h2>
+        <hr />
+      </section>
 
-        <div class="separator"></div>
+      <div class="separator"></div>
 
-        <section id="store">
-            <h2>Store</h2>
-            <div id="buildings"></div>
-        </section>
+      <section id="store">
+        <h2>Store</h2>
+        <div id="buildings"></div>
+      </section>
     </main>
-
-
     <script type="module" src="/js/main.mjs"></script>
-
-
-</body>
-
+  </body>
 </html>
