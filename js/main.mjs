@@ -8,7 +8,7 @@ const cookiesStock = document.querySelector('#cookiesStock span')
 const cookiesPerSecond = document.querySelector('#cookiesPerSecond span')
 const bigCookie = document.getElementById('bigCookie')
 const containerBuildings = document.querySelector('#buildings')
-
+console.log('cequetuveux')
 
 // Instanciation des classes 
 const myBakery = new Bakery()
@@ -77,4 +77,13 @@ bigCookie.addEventListener('click', () => {
     UpdatingTuils(2, 'farm')
     UpdatingTuils(3, 'mine')
     UpdatingTuils(4, 'factory')
+    // complete here
 })
+
+
+
+
+// animation cookie +1
+// setInterval() || keyframes
+// Events click -> mousemove || mouseover
+// Créer un element p (class) et le supprimer a la fin de l'animation
