@@ -24,7 +24,7 @@ function updatingValuesBakery() {
     cookiesPerSecond.innerHTML = myBakery._cookiesPerSecond
 }
 
-// Créations ddes tuiles 
+// Créations des tuiles 
 function renderTuils(index, name) {
     // Index défini à l'appel et name pour update et remove la class disabled
     containerBuildings.innerHTML +=
@@ -50,14 +50,14 @@ function UpdatingTuils(index, name){
         // Paramètre name pour générer l'id dynamiquement afin de remove la class "disabled"
         let tuil = document.getElementById(`building-${[name]}`).classList.remove('disabled')
         let iconEnabled = document.getElementsByClassName('icon')[index].style.backgroundPosition = iconPositionEnabled[index]
-    }
+    } 
 }
 
 
 // Au click sur le cookie 
 bigCookie.addEventListener('click', () => {
     updatingValuesBakery()
-    console.log(myBakery._cookies)
+    // console.log(myBakery._cookies)
     myBakery.bakeCookies()
     UpdatingTuils(0, 'cursor')
     UpdatingTuils(1, 'grandma')
