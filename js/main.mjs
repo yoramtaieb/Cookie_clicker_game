@@ -8,7 +8,6 @@ const cookiesStock = document.querySelector('#cookiesStock span')
 const cookiesPerSecond = document.querySelector('#cookiesPerSecond span')
 const bigCookie = document.getElementById('bigCookie')
 const containerBuildings = document.querySelector('#buildings')
-console.log('cequetuveux')
 
 // Instanciation des classes 
 const myBakery = new Bakery()
@@ -78,12 +77,12 @@ bigCookie.addEventListener('click', (event) => {
     UpdatingTuils(3, 'mine')
     UpdatingTuils(4, 'factory')
     // Animation +1
-    let newDiv = document.createElement('div');
-    newDiv.setAttribute("id", 'test')
-    newDiv.innerHTML = '+1'
-    bigCookie.appendChild(newDiv)
-    newDiv.style.top = `${event.clientY}px`
-    newDiv.style.left = `${event.clientX}px`
+    let divIncrement = document.createElement('div');
+    divIncrement.setAttribute("id", 'divIncrement')
+    divIncrement.innerHTML = '+1'
+    bigCookie.appendChild(divIncrement)
+    divIncrement.style.top = `${event.clientY}px`
+    divIncrement.style.left = `${event.clientX}px`
    bigCookie.addEventListener('animationend', (event) => {
        bigCookie.innerHTML = " "
    })

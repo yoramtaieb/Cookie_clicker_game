@@ -45,13 +45,14 @@
     transform: scale(0.95);
 }
 
-#test {
+#divIncrement {
     animation-name: cookies;
     animation-duration: 3s;
     position: absolute;
     margin-top:-210px;
     margin-left: -100px;
-
+    font-size: 20.8px;
+    font-weight: bold;
 }
 
 @keyframes cookies {
