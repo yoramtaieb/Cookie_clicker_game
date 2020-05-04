@@ -3,28 +3,30 @@ import Bakery from './classes/Bakery.mjs'
 import { buildings } from './data.mjs'
 
 // Importation d'éléments HTML
-const containerBuildings = document.querySelector('#buildings')
 const bakeryName = document.querySelector('#bakery h2')
 const cookiesStock = document.querySelector('#cookiesStock span')
 const cookiesPerSecond = document.querySelector('#cookiesPerSecond span')
 const bigCookie = document.getElementById('bigCookie')
+const containerBuildings = document.querySelector('#buildings')
 
 
 // Instanciation des classes 
 const myBakery = new Bakery()
 
+// Tableaux positions icons
+let iconPositionLocked = ['-65px 0px', '-65px -60px', '-65px -195px', '-65px -260px', '-65px -320px']
+let iconPositionEnabled = ['0px 0px', '1px -65px', '1px -198px', '1px -255px', '1px -320px']
+
+// Mise à jour dynamique de la section Bakery
 function updatingValuesBakery() {
     bakeryName.innerHTML = myBakery._name
     cookiesStock.innerHTML = myBakery._cookies
     cookiesPerSecond.innerHTML = myBakery._cookiesPerSecond
 }
 
-let iconPositionLocked = ['-65px 0px', '-65px -60px', '-65px -195px', '-65px -260px', '-65px -320px']
-
-let iconPositionEnabled = ['0px 0px', '1px -65px', '1px -198px', '1px -255px', '1px -320px']
-
+// Créations ddes tuiles 
 function renderTuils(index, name) {
-    // Render Tuiles
+    // Index défini à l'appel et name pour update et remove la class disabled
     containerBuildings.innerHTML +=
         `<div id='building-${buildings[index].name.toLowerCase()}' class='locked disabled'>
     <div class='icon'></div>
@@ -40,6 +42,7 @@ function renderTuils(index, name) {
     UpdatingTuils(index, name)
 }
 
+// Mise à jour des tuiles en fonction de l'argent en poche
 function UpdatingTuils(index, name){
     const priceTuil = document.getElementsByClassName('cost')
     // Update Tuiles en fonctions de l'argent en poche
@@ -51,7 +54,7 @@ function UpdatingTuils(index, name){
 }
 
 
-// Evènements 
+// Au click sur le cookie 
 bigCookie.addEventListener('click', () => {
     updatingValuesBakery()
     console.log(myBakery._cookies)
@@ -63,7 +66,7 @@ bigCookie.addEventListener('click', () => {
     UpdatingTuils(4, 'factory')
 })
 
-
+// Au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     updatingValuesBakery()
     renderTuils(0, 'cursor')
