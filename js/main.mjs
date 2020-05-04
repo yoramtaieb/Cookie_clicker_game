@@ -17,6 +17,8 @@ const myBakery = new Bakery()
 let iconPositionLocked = ['-65px 0px', '-65px -60px', '-65px -195px', '-65px -260px', '-65px -320px']
 let iconPositionEnabled = ['0px 0px', '1px -65px', '1px -198px', '1px -255px', '1px -320px']
 
+// FUNCTIONS
+
 // Mise à jour dynamique de la section Bakery
 function updatingValuesBakery() {
     bakeryName.innerHTML = myBakery._name
@@ -53,6 +55,17 @@ function UpdatingTuils(index, name){
     } 
 }
 
+// EVENEMENT
+
+// Au chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+    updatingValuesBakery()
+    renderTuils(0, 'cursor')
+    renderTuils(1, 'grandma')
+    renderTuils(2, 'farm')
+    renderTuils(3, 'mine')
+    renderTuils(4, 'factory')
+})
 
 // Au click sur le cookie 
 bigCookie.addEventListener('click', () => {
@@ -64,14 +77,4 @@ bigCookie.addEventListener('click', () => {
     UpdatingTuils(2, 'farm')
     UpdatingTuils(3, 'mine')
     UpdatingTuils(4, 'factory')
-})
-
-// Au chargement de la page
-document.addEventListener('DOMContentLoaded', () => {
-    updatingValuesBakery()
-    renderTuils(0, 'cursor')
-    renderTuils(1, 'grandma')
-    renderTuils(2, 'farm')
-    renderTuils(3, 'mine')
-    renderTuils(4, 'factory')
 })
