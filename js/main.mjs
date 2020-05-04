@@ -54,6 +54,11 @@ function UpdatingTuils(index, name){
     } 
 }
 
+// Random un chiffre pour générer l'audio random 
+function randomizeAudio(){
+    return Math.floor(Math.random() * (7 - 1)) + 1;
+}
+
 // EVENEMENT
 
 // Au chargement de la page
@@ -83,7 +88,12 @@ bigCookie.addEventListener('click', (event) => {
     bigCookie.appendChild(divIncrement)
     divIncrement.style.top = `${event.clientY}px`
     divIncrement.style.left = `${event.clientX}px`
-   bigCookie.addEventListener('animationend', (event) => {
-       bigCookie.innerHTML = " "
-   })
+    let audio = document.createElement('audio')
+    audio.setAttribute('src', `./assets/sounds/click${randomizeAudio()}.mp3`)
+    bigCookie.appendChild(audio)
+    audio.play()
+    bigCookie.appendChild(audio)
+    bigCookie.addEventListener('animationend', (event) => {
+        bigCookie.innerHTML = " "
+    })
 })
