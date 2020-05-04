@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // Au click sur le cookie 
-bigCookie.addEventListener('click', () => {
+bigCookie.addEventListener('click', (event) => {
     updatingValuesBakery()
     // console.log(myBakery._cookies)
     myBakery.bakeCookies()
@@ -77,13 +77,14 @@ bigCookie.addEventListener('click', () => {
     UpdatingTuils(2, 'farm')
     UpdatingTuils(3, 'mine')
     UpdatingTuils(4, 'factory')
-    // complete here
+    // Animation +1
+    let newDiv = document.createElement('div');
+    newDiv.setAttribute("id", 'test')
+    newDiv.innerHTML = '+1'
+    bigCookie.appendChild(newDiv)
+    newDiv.style.top = `${event.clientY}px`
+    newDiv.style.left = `${event.clientX}px`
+   bigCookie.addEventListener('animationend', (event) => {
+       bigCookie.innerHTML = " "
+   })
 })
-
-
-
-
-// animation cookie +1
-// setInterval() || keyframes
-// Events click -> mousemove || mouseover
-// Créer un element p (class) et le supprimer a la fin de l'animation

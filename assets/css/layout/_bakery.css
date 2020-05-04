@@ -44,3 +44,31 @@
 #bigCookie:active {
     transform: scale(0.95);
 }
+
+#test {
+    animation-name: cookies;
+    animation-duration: 3s;
+    position: absolute;
+    margin-top:-210px;
+    margin-left: -100px;
+
+}
+
+@keyframes cookies {
+    0%{
+        opacity: 1;
+    }
+
+    20%{
+        opacity: 0.5;
+    }
+
+    50%{
+        opacity: 0.2;
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+}
