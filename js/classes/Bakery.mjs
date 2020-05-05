@@ -1,8 +1,12 @@
+import { buildings } from '../data.mjs'
+import Building from '../classes/Building.mjs'
 class Bakery {
-    constructor(name, cookies, buildings, cookiesPerClick, cookiesPerSecond) {
+    constructor(name, cookies, cookiesPerClick, cookiesPerSecond) {
         this._name = "⚡️ Le four ⚡️"
-        this._cookies = 1
-        this._buildings = []
+        this._cookies = 0
+        this._buildings = buildings.map(building => {
+            return new Building(building) 
+        })
         this._cookiesPerClick = 1
         this._cookiesPerSecond = 0
     }
@@ -14,4 +18,6 @@ class Bakery {
     }
 }
 
+const bakery = new Bakery()
+console.log(bakery._buildings)
 export default Bakery

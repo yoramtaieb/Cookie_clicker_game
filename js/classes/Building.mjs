@@ -1,5 +1,6 @@
 class Building{
-    constructor(name, description, number, cookiesPerSecond, cost){
+    constructor(building){
+        const {name, description, number, cookiesPerSecond, cost} = building 
         this._name = name
         this._description = description
         this._number = 0

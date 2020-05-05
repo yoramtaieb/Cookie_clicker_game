@@ -29,11 +29,11 @@ function updatingValuesBakery() {
 function renderTuils(index) {
     // Index défini à l'appel et name pour update et remove la class disabled
     containerBuildings.innerHTML +=
-        `<div id='building-${buildings[index].name.toLowerCase()}' class='locked disabled tuil'>
+        `<div id='building-${myBakery._buildings[index]._name.toLowerCase()}' class='locked disabled tuil'>
     <div class='icon'></div>
     <div class="boxInfos">
-        <div class='name'>${buildings[index].name}</div>
-        <div class='cost'>${buildings[index].cost}</div>
+        <div class='name'>${myBakery._buildings[index]._name}</div>
+        <div class='cost'>${myBakery._buildings[index]._cost}</div>
     </div>
     <div class='number'></div>
     </div>`
@@ -92,11 +92,13 @@ bigCookie.addEventListener('click', (event) => {
     UpdatingTuils(0, 'cursor')
     UpdatingTuils(1, 'grandma')
     let tuilsLength = document.querySelectorAll('.tuil').length -2
+    // console.log(tuilsLength)
     const priceTuil = document.getElementsByClassName('cost')
+    let tuilsLengthElement = document.querySelectorAll('.tuil')
     if (myBakery._cookies > parseInt(priceTuil[tuilsLength].innerHTML)) {
-        renderTuils(count++)
-        UpdatingTuils(2, 'farm')
-        UpdatingTuils(3, 'mine')
-        UpdatingTuils(4, 'factory')
+        // console.log(count)
+        renderTuils(count)
+        UpdatingTuils(count, myBakery._buildings[count]._name)
+        count += 1
     } 
 })
