@@ -3,18 +3,18 @@ import Building from '../classes/Building.mjs'
 class Bakery {
     constructor(name, cookies, cookiesPerClick, cookiesPerSecond) {
         this._name = "⚡️ Le four ⚡️"
-        this._cookies = 0
+        this._cookies = 1099
         this._buildings = buildings.map(building => {
-            return new Building(building) 
+            return new Building(building)
         })
         this._cookiesPerClick = 1
         this._cookiesPerSecond = 0
     }
-    
+
     // Méthode incrémentant le nombre de cookies en stock
-    bakeCookies(howMany){
+    bakeCookies(howMany) {
         howMany = this._cookiesPerClick
-       return this._cookies += howMany
+        return this._cookies += howMany
     }
 }
 

@@ -1,11 +1,11 @@
-#game{
+#game {
     height: 100vh;
     display: flex;
     justify-content: space-around;
     /* background-color: purple; */
 }
 
-.separator{
+.separator {
     width: 16px;
     background-image: url('../../images/panel-vertical.png');
 }

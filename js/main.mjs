@@ -1,6 +1,5 @@
 // Importation des classes et data
 import Bakery from './classes/Bakery.mjs'
-import { buildings } from './data.mjs'
 
 // Importation d'éléments HTML
 const bakeryName = document.querySelector('#bakery h2')
@@ -42,20 +41,29 @@ function renderTuils(index) {
 }
 
 let count = 2
-// Mise à jour des tuiles en fonction de l'argent en poche
-function UpdatingTuils(index, name){
+    // Mise à jour des tuiles en fonction de l'argent en poche
+function UpdatingTuils(index, name) {
     const priceTuil = document.getElementsByClassName('cost')
-    // Update Tuiles en fonctions de l'argent en poche
-    // console.log(parseInt(priceTuil[index].innerHTML))
+        // Update Tuiles en fonctions de l'argent en poche
+        // console.log(parseInt(priceTuil[index].innerHTML))
     if (myBakery._cookies > parseInt(priceTuil[index].innerHTML)) {
         // Paramètre name pour générer l'id dynamiquement afin de remove la class "disabled"
         let tuil = document.getElementById(`building-${[name]}`).classList.remove('disabled')
         let iconEnabled = document.getElementsByClassName('icon')[index].style.backgroundPosition = iconPositionEnabled[index]
-    } 
+    }
+}
+
+// Update des nouvelles tuiles render au dévérouillage d'une tuile précédente
+function updateNewTuil() {
+    let tuilsLength = document.querySelectorAll('.tuil').length - 1
+    for (let i = 1; i <= tuilsLength; i++) {
+        console.log(myBakery._buildings[i]._name.toLowerCase())
+        UpdatingTuils(i, myBakery._buildings[i]._name.toLowerCase());
+    }
 }
 
 // Random un chiffre pour générer l'audio random 
-function randomizeAudio(){
+function randomizeAudio() {
     return Math.floor(Math.random() * (7 - 1)) + 1;
 }
 
@@ -71,9 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // Au click sur le cookie 
 bigCookie.addEventListener('click', (event) => {
     updatingValuesBakery()
-    // console.log(myBakery._cookies)
+        // console.log(myBakery._cookies)
     myBakery.bakeCookies()
-    // Animation +1
+        // Animation +1
     let divIncrement = document.createElement('div');
     divIncrement.setAttribute("id", 'divIncrement')
     divIncrement.innerHTML = '+1'
@@ -88,17 +96,15 @@ bigCookie.addEventListener('click', (event) => {
     bigCookie.addEventListener('animationend', (event) => {
         bigCookie.innerHTML = " "
     })
-    // update
     UpdatingTuils(0, 'cursor')
     UpdatingTuils(1, 'grandma')
-    let tuilsLength = document.querySelectorAll('.tuil').length -2
-    // console.log(tuilsLength)
+    let tuilsLength = document.querySelectorAll('.tuil').length - 2
+        // console.log(tuilsLength)
     const priceTuil = document.getElementsByClassName('cost')
-    let tuilsLengthElement = document.querySelectorAll('.tuil')
     if (myBakery._cookies > parseInt(priceTuil[tuilsLength].innerHTML)) {
-        // console.log(count)
+        console.log(count)
         renderTuils(count)
-        UpdatingTuils(count, myBakery._buildings[count]._name)
         count += 1
-    } 
+    }
+    updateNewTuil()
 })
