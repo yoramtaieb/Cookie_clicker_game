@@ -95,5 +95,8 @@ bigCookie.addEventListener('click', (event) => {
     const priceTuil = document.getElementsByClassName('cost')
     if (myBakery._cookies > parseInt(priceTuil[tuilsLength].innerHTML)) {
         renderTuils(count++)
+        UpdatingTuils(2, 'farm')
+        UpdatingTuils(3, 'mine')
+        UpdatingTuils(4, 'factory')
     } 
 })
