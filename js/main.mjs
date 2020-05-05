@@ -26,10 +26,10 @@ function updatingValuesBakery() {
 }
 
 // Créations des tuiles 
-function renderTuils(index, name) {
+function renderTuils(index) {
     // Index défini à l'appel et name pour update et remove la class disabled
     containerBuildings.innerHTML +=
-        `<div id='building-${buildings[index].name.toLowerCase()}' class='locked disabled'>
+        `<div id='building-${buildings[index].name.toLowerCase()}' class='locked disabled tuil'>
     <div class='icon'></div>
     <div class="boxInfos">
         <div class='name'>${buildings[index].name}</div>
@@ -39,15 +39,15 @@ function renderTuils(index, name) {
     </div>`
 
     document.getElementsByClassName('icon')[index].style.backgroundPosition = iconPositionLocked[index]
-    // Passage des paramètres index et name de renderTuils
-    UpdatingTuils(index, name)
 }
 
+let count = 2
 // Mise à jour des tuiles en fonction de l'argent en poche
 function UpdatingTuils(index, name){
     const priceTuil = document.getElementsByClassName('cost')
     // Update Tuiles en fonctions de l'argent en poche
-    if (myBakery._cookies >= parseInt(priceTuil[index].innerHTML)) {
+    // console.log(parseInt(priceTuil[index].innerHTML))
+    if (myBakery._cookies > parseInt(priceTuil[index].innerHTML)) {
         // Paramètre name pour générer l'id dynamiquement afin de remove la class "disabled"
         let tuil = document.getElementById(`building-${[name]}`).classList.remove('disabled')
         let iconEnabled = document.getElementsByClassName('icon')[index].style.backgroundPosition = iconPositionEnabled[index]
@@ -64,11 +64,8 @@ function randomizeAudio(){
 // Au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     updatingValuesBakery()
-    renderTuils(0, 'cursor')
-    renderTuils(1, 'grandma')
-    renderTuils(2, 'farm')
-    renderTuils(3, 'mine')
-    renderTuils(4, 'factory')
+    renderTuils(0)
+    renderTuils(1)
 })
 
 // Au click sur le cookie 
@@ -76,11 +73,6 @@ bigCookie.addEventListener('click', (event) => {
     updatingValuesBakery()
     // console.log(myBakery._cookies)
     myBakery.bakeCookies()
-    UpdatingTuils(0, 'cursor')
-    UpdatingTuils(1, 'grandma')
-    UpdatingTuils(2, 'farm')
-    UpdatingTuils(3, 'mine')
-    UpdatingTuils(4, 'factory')
     // Animation +1
     let divIncrement = document.createElement('div');
     divIncrement.setAttribute("id", 'divIncrement')
@@ -96,4 +88,12 @@ bigCookie.addEventListener('click', (event) => {
     bigCookie.addEventListener('animationend', (event) => {
         bigCookie.innerHTML = " "
     })
+    // update
+    UpdatingTuils(0, 'cursor')
+    UpdatingTuils(1, 'grandma')
+    let tuilsLength = document.querySelectorAll('.tuil').length -2
+    const priceTuil = document.getElementsByClassName('cost')
+    if (myBakery._cookies > parseInt(priceTuil[tuilsLength].innerHTML)) {
+        renderTuils(count++)
+    } 
 })
