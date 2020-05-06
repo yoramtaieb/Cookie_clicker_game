@@ -9,7 +9,8 @@ class Building{
     }
 
     buy(){
-        this._number++
+        console.log('buy()')
+        this._number++;
         return this._cost = Math.ceil(this._cost * 1.15)
     }
 }

@@ -28,7 +28,7 @@ function updatingValuesBakery() {
 function renderTuils(index) {
     // Index défini à l'appel et name pour update et remove la class disabled
     containerBuildings.innerHTML +=
-        `<div id='building-${myBakery._buildings[index]._name.toLowerCase()}' class='locked disabled tuil'>
+        `<div id='building-${myBakery._buildings[index]._name.toLowerCase()}' class='locked disabled tuil ${index}'>
     <div class='icon'></div>
     <div class="boxInfos">
         <div class='name'>${myBakery._buildings[index]._name}</div>
@@ -38,7 +38,7 @@ function renderTuils(index) {
     </div>`
 
     document.getElementsByClassName('icon')[index].style.backgroundPosition = iconPositionLocked[index]
-    // test()
+    test()
 }
 
 let count = 2
@@ -58,7 +58,7 @@ function UpdatingTuils(index, name) {
 function updateNewTuil() {
     let tuilsLength = document.querySelectorAll('.tuil').length - 1
     for (let i = 1; i <= tuilsLength; i++) {
-        console.log(myBakery._buildings[i]._name.toLowerCase())
+        // console.log(myBakery._buildings[i]._name.toLowerCase())
         UpdatingTuils(i, myBakery._buildings[i]._name.toLowerCase());
     }
 }
@@ -103,27 +103,28 @@ bigCookie.addEventListener('click', (event) => {
         // console.log(tuilsLength)
     const priceTuil = document.getElementsByClassName('cost')
     if (myBakery._cookies > parseInt(priceTuil[tuilsLength].innerHTML)) {
-        console.log(count)
+        // console.log(count)
         renderTuils(count)
         count += 1
     }
     updateNewTuil()
 })
 
-// function test(){
-//     const tuilsList = document.querySelectorAll('.tuil')
-//     tuilsList.forEach((tuil) => tuil.addEventListener('click', (e) => {
-//         console.log(tuil)
-//         // console.log(myBakery._buildings[0]._cost)
-//         const priceTuil = document.querySelector(`${tuil.id}.cost`)
-//         const numberBuilding = document.getElementsByClassName('number')
-//         if(myBakery._cookies > parseInt(priceTuil.innerHTML)){
-//             console.log(tuilsList)
-//             document.getElementById(`${tuil.id}`).classList.add('disabled')
-//             document.getElementsByClassName('icon')[tuil.id].style.backgroundPosition = iconPositionEnabled[tuil.id]
-//             myBakery._buildings[tuil.id].buy()
-//             priceTuil[tuil.id].innerHTML = myBakery._buildings[tuil.id]._cost
-//             numberBuilding[tuil.id].innerHTML = myBakery._buildings[tuil.id]._number
-//         }
-//     }))
-// }
+function test(){
+    const tuilsList = document.querySelectorAll('.tuil')
+    tuilsList.forEach((tuil) => tuil.addEventListener('click', (e) => {
+        // console.log(tuil)
+        const priceTuil = document.querySelector(`#${tuil.id} .cost`)
+        // console.log(document.querySelector(`#${tuil.id} .cost`).innerHTML)
+        const numberBuilding = document.querySelector(`#${tuil.id} .number`)
+        // console.log(parseInt(priceTuil.innerHTML))
+        if(myBakery._cookies > parseInt(priceTuil.innerHTML)){
+            document.getElementById(`${tuil.id}`).classList.add('disabled')
+            myBakery._buildings[`${parseInt(tuil.classList[2])}`].buy()
+            priceTuil.innerHTML = myBakery._buildings[`${parseInt(tuil.classList[2])}`]._cost
+            numberBuilding.innerHTML = myBakery._buildings[`${parseInt(tuil.classList[2])}`]._number
+            
+        }
+    }))
+}
+
