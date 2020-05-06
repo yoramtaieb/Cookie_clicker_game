@@ -8,6 +8,10 @@ class Building{
         this._cost = cost
     }
 
+    buy(){
+        this.number++
+        return this._cost = Math.ceil(this._cost * 1.15)
+    }
 }
 
 export default Building
