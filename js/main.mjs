@@ -38,6 +38,7 @@ function renderTuils(index) {
     </div>`
 
     document.getElementsByClassName('icon')[index].style.backgroundPosition = iconPositionLocked[index]
+    test()
 }
 
 let count = 2
@@ -108,3 +109,11 @@ bigCookie.addEventListener('click', (event) => {
     }
     updateNewTuil()
 })
+
+function test(){
+    let tuilsList = document.querySelectorAll('.tuil')
+    tuilsList.forEach((tuil) => tuil.addEventListener('click', (e) => {
+        console.log('hello')
+        // Code ici 
+    }))
+}
