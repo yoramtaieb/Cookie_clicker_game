@@ -3,7 +3,7 @@ import Building from '../classes/Building.mjs'
 class Bakery {
     constructor(name, cookies, cookiesPerClick, cookiesPerSecond) {
         this._name = "⚡️ Le four ⚡️"
-        this._cookies = 15
+        this._cookies = 0
         this._buildings = buildings.map(building => {
             return new Building(building)
         })
@@ -19,6 +19,7 @@ class Bakery {
 
     // Méthodes permettant de mettre à jour la bakery en fonction de la methode buy()
     buyBuilding(which){
+        console.log('buyBuilding()')
         this._buildings[which].buy()
         // this._cookies = this._cookies - this._buildings
         this._cookiesPerSecond = this._cookiesPerSecond += this._buildings[which]._cookiesPerSecond

@@ -119,11 +119,12 @@ function test(){
         const numberBuilding = document.querySelector(`#${tuil.id} .number`)
         // console.log(parseInt(priceTuil.innerHTML))
         if(myBakery._cookies > parseInt(priceTuil.innerHTML)){
+            // On achète une tuile
+            myBakery.buyBuilding(parseInt(tuil.classList[2]))
             document.getElementById(`${tuil.id}`).classList.add('disabled')
-            myBakery._buildings[`${parseInt(tuil.classList[2])}`].buy()
             priceTuil.innerHTML = myBakery._buildings[`${parseInt(tuil.classList[2])}`]._cost
             numberBuilding.innerHTML = myBakery._buildings[`${parseInt(tuil.classList[2])}`]._number
-            
+            updatingValuesBakery()
         }
     }))
 }
