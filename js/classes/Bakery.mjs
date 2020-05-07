@@ -19,15 +19,16 @@ class Bakery {
 
     // Méthodes permettant de mettre à jour la bakery en fonction de la methode buy()
     buyBuilding(which){
-        console.log('buyBuilding()')
+        console.log(this._buildings[which]._cost )
+        this._cookies = (this._cookies - this._buildings[which]._cost) - 1
         this._buildings[which].buy()
-        // this._cookies = this._cookies - this._buildings
+        // Revoir la troisième tuile arrondir a 1 chiffre apr!ès 
         this._cookiesPerSecond = this._cookiesPerSecond += this._buildings[which]._cookiesPerSecond
     }
 }
 
-const bakery = new Bakery()
-console.log(bakery._cookiesPerSecond)
-bakery.buyBuilding(0)
-console.log(bakery._cookiesPerSecond)
+// const bakery = new Bakery()
+// console.log(bakery._cookiesPerSecond)
+// bakery.buyBuilding(0)
+// console.log(bakery._cookiesPerSecond)
 export default Bakery
