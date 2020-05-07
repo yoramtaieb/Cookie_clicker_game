@@ -110,16 +110,15 @@ bigCookie.addEventListener('click', (event) => {
     updateNewTuil()
 })
 
-function clickOnTuil(){
+function clickOnTuil() {
     const tuilsList = document.querySelectorAll('.tuil')
     tuilsList.forEach((tuil) => tuil.addEventListener('click', (e) => {
         // console.log(tuil)
         const priceTuil = document.querySelector(`#${tuil.id} .cost`)
         const numberBuilding = document.querySelector(`#${tuil.id} .number`)
-        // console.log(parseInt(priceTuil.innerHTML))
-        if(myBakery._cookies > parseInt(priceTuil.innerHTML)){
+            // console.log(parseInt(priceTuil.innerHTML))
+        if (myBakery._cookies > parseInt(priceTuil.innerHTML)) {
             // On achète une tuile
-            document.getElementById(`${tuil.id}`).style.border = '1px solid green'
             myBakery.buyBuilding(parseInt(tuil.classList[2]))
             document.getElementById(`${tuil.id}`).classList.add('disabled')
             priceTuil.innerHTML = myBakery._buildings[`${parseInt(tuil.classList[2])}`]._cost
@@ -129,9 +128,8 @@ function clickOnTuil(){
             audioTuil.setAttribute('id', 'audioTuil')
             audioTuil.src = `/assets/sounds/buy${randomizeAudio(1, 4)}.mp3`
             audioTuil.play()
-        } 
+        }
         // Else?
-        
+
     }))
 }
-
