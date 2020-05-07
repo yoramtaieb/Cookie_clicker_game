@@ -38,7 +38,7 @@ function renderTuils(index) {
     </div>`
 
     document.getElementsByClassName('icon')[index].style.backgroundPosition = iconPositionLocked[index]
-    test()
+    clickOnTuil()
 }
 
 let count = 2
@@ -64,8 +64,8 @@ function updateNewTuil() {
 }
 
 // Random un chiffre pour générer l'audio random 
-function randomizeAudio() {
-    return Math.floor(Math.random() * (7 - 1)) + 1;
+function randomizeAudio(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 // EVENEMENT
@@ -90,7 +90,7 @@ bigCookie.addEventListener('click', (event) => {
     divIncrement.style.top = `${event.clientY}px`
     divIncrement.style.left = `${event.clientX}px`
     let audio = document.createElement('audio')
-    audio.setAttribute('src', `./assets/sounds/click${randomizeAudio()}.mp3`)
+    audio.setAttribute('src', `./assets/sounds/click${randomizeAudio(1, 7)}.mp3`)
     bigCookie.appendChild(audio)
     audio.play()
     bigCookie.appendChild(audio)
@@ -110,22 +110,28 @@ bigCookie.addEventListener('click', (event) => {
     updateNewTuil()
 })
 
-function test(){
+function clickOnTuil(){
     const tuilsList = document.querySelectorAll('.tuil')
     tuilsList.forEach((tuil) => tuil.addEventListener('click', (e) => {
         // console.log(tuil)
         const priceTuil = document.querySelector(`#${tuil.id} .cost`)
-        // console.log(document.querySelector(`#${tuil.id} .cost`).innerHTML)
         const numberBuilding = document.querySelector(`#${tuil.id} .number`)
         // console.log(parseInt(priceTuil.innerHTML))
         if(myBakery._cookies > parseInt(priceTuil.innerHTML)){
             // On achète une tuile
+            document.getElementById(`${tuil.id}`).style.border = '1px solid green'
             myBakery.buyBuilding(parseInt(tuil.classList[2]))
             document.getElementById(`${tuil.id}`).classList.add('disabled')
             priceTuil.innerHTML = myBakery._buildings[`${parseInt(tuil.classList[2])}`]._cost
             numberBuilding.innerHTML = myBakery._buildings[`${parseInt(tuil.classList[2])}`]._number
             updatingValuesBakery()
-        }
+            let audioTuil = document.createElement('audio')
+            audioTuil.setAttribute('id', 'audioTuil')
+            audioTuil.src = `/assets/sounds/buy${randomizeAudio(1, 4)}.mp3`
+            audioTuil.play()
+        } 
+        // Else?
+        
     }))
 }
 

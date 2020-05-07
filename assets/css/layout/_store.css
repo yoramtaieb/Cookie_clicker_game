@@ -47,6 +47,7 @@
     padding: 1px 1px 4px 4px;
     cursor: pointer;
     display: flex;
+    align-items: center;
     background-color: yellow;
     transition-duration: 0.3s;
 }
@@ -61,12 +62,15 @@
     background-repeat: no-repeat;
     height: 58px;
     width: 23%;
+    /* background-color: pink; */
 }
 
 .boxInfos {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* background-color: purple; */
+    width: 30%;
 }
 
 .cost {
@@ -74,6 +78,16 @@
     text-shadow: 0px 1px 4px #000000;
     color: #66ff66;
     padding-top: 10px;
+    /* background-color: yellow; */
+}
+
+.number{
+    width: 20%;
+    /* background-color: red; */
+    margin-left: 22%;
+    font-size: 34px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .disabled::after {
